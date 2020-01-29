@@ -11,17 +11,17 @@
             <th scope="col">Pris</th>
             </tr>
         </thead>
-        @foreach ($product as $products) 
+
         <tbody>
             <tr>
-            <th scope="row">{{ $products->id }}</th>
-            <td>{{ $products->name }}</td>
-            <td>{{ $products->flavor }}</td>
-            <td>{{ $products->type }}</td>
-            <td>{{ $products->price }} SEK</td>
+            <th scope="row">-</th>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>- SEK</td>
             </tr>
         </tbody>
-        @endforeach
+
 </table>
 @endsection
         

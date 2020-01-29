@@ -19,5 +19,8 @@ Route::get('/', function () {
 //     return view('products', 'ProductController@show');
 // });
 
-Route::post('/search', 'SearchController@search');
 Route::get('/products', 'ProductController@show');
+Route::get('/orders', 'OrderController@show');
+Route::get('/cart', 'CartController@show');
+Route::post('/search', 'SearchController@search');
+
