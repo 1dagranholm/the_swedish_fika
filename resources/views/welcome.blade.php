@@ -82,12 +82,6 @@
                     @endauth
                 </div>
             @endif
-        <form action="{{url('/search')}}" method="post">
-            {{ csrf_field() }}
-            <input type="text" name="searchInput">
-            <input type="submit">
-        </form>
-
             <div class="content">
                 <div class="title m-b-md">
                     Välkommen

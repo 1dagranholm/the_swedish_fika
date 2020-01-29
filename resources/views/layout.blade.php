@@ -39,8 +39,9 @@
                 <a class="nav-link" href="/cart">Kundkorg</a>
               </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Sök">
+          <form class="form-inline my-2 my-lg-0" action="{{url('/search')}}" method="post">
+          {{ csrf_field() }}
+              <input class="form-control mr-sm-2" type="search" placeholder="Sök" name="searchInput">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sök</button>
           </form>
         </div>
