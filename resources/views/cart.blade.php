@@ -64,13 +64,13 @@
         </style>
     </head>
     <body>
+        <h1 class="title content">Välkommen till kassan!</h1>
         <div class="flex-center position-ref full-height">
 
             <table class="table table-striped">
-                <form action="/cart" id="product_form" method="POST">
+                <form action="/confirm" id="cart_form" method="POST">
                 @csrf
                     <thead>
-                    <tr><th><h1>Välkommen till kassan!</h1></th></tr>
                       <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
@@ -79,20 +79,22 @@
                         <th scope="col">Price</th>
                       </tr>
                     </thead>
-
                     <tbody>
 
-                    @foreach ($product as $products)
-                      <tr>
-                        <th scope="row"><input name="product[{{ $products->id }}][id]" value="{{ $products->id }}" /></th>
-                        <td><input name="product[{{ $products->id }}][{{ $products->name }}]" value="{{ $products->name }}" /></td>
-                        <td><input name="product[{{ $products->id }}][{{ $products->flavor }}]" value="{{ $products->flavor }}" /></td>
-                        <td><input name="product[{{ $products->id }}][{{ $products->type }}]" value="{{ $products->type }}" /></td>
-                        <td><input name="product[{{ $products->id }}][{{ $products->price }}]" value="{{ $products->price }}" /></td>
-                      </tr>
-                    @endforeach
+                        @foreach ($product['product'] as $products)
+                        @if(array_key_exists('checked', $products))
                         <tr>
-                            <td><input type="submit" value="Submit"></td>
+                            <th scope="row"> {{ $products['id'] }} </th>
+                            <td> {{ $products['name'] }} </td>
+                            <td> {{ $products['flavor'] }} </td>
+                            <td><{{ $products['type'] }} </td>
+                            <td>{{ $products['price'] }}</td>
+                        </tr>
+                        @endif
+                        @endforeach
+
+                        <tr>
+                            <td><input type="submit" value="Bekräfta beställningen"></td>
                         </tr>
                     </tbody>
                 </form>

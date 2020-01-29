@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/confirm', function () {
+    return view('confirm');
+});
+
 // Route::get('products', function () {
 //     return view('products', 'ProductController@show');
 // });

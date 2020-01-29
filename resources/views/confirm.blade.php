@@ -65,38 +65,26 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
 
-            <table class="table table-striped">
-                <form action="/cart" id="product_form" method="POST">
-                @csrf
-                    <thead>
-                      <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Flavors</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Price</th>
-                      </tr>
-                    </thead>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
 
-                    <tbody>
+            <div class="content">
+                <div class="title m-b-md">
+                    <p> Tack för din beställning! </p>
+                </div>
 
-                    @foreach ($product as $products)
-                      <tr>
-                        <th scope="row"><input name="product[{{ $products->id }}][id]" value="{{ $products->id }}" /></th>
-                        <td><input name="product[{{ $products->id }}][name]" value="{{ $products->name }}" /></td>
-                        <td><input name="product[{{ $products->id }}][flavor]" value="{{ $products->flavor }}" /></td>
-                        <td><input name="product[{{ $products->id }}][type]" value="{{ $products->type }}" /></td>
-                        <td><input name="product[{{ $products->id }}][price]" value="{{ $products->price }}" /></td>
-                        <td><input name="product[{{ $products->id }}][checked]" type="checkbox" value="True"></td>
-                      </tr>
-                    @endforeach
-                        <tr>
-                            <td><input type="submit" value="Lätt till i kundkorgen"></td>
-                        </tr>
-                    </tbody>
-                </form>
-            </table>
+            </div>
         </div>
     </body>
 </html>

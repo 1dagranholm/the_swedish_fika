@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
-
+use Symfony\Component\VarDumper\VarDumper;
 
 class ProductController extends Controller {
 
@@ -16,11 +16,9 @@ class ProductController extends Controller {
         }
 
         public function cart(Request $request) {
-            echo "<pre>". print_r($request->all(), true) ."</pre>";
 
-            $products = Product::show();
             return view('cart', [
-                'product' => $products
+                'product' => $request->all()
             ]);
         }
 }
