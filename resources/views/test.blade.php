@@ -65,9 +65,28 @@
     </head>
     <body>
         <h1>SO FAR SO GOOD</h1>
-        {{ $product->name }}
-
-
-
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Flavors</th>
+                <th scope="col">Type</th>
+                <th scope="col">Price</th>
+                </tr>
+            </thead>
+            @foreach ($product as $products) 
+            <tbody>
+                <tr>
+                <th scope="row">{{ $products->id }}</th>
+                <td>{{ $products->name }}</td>
+                <td>{{ $products->flavor }}</td>
+                <td>{{ $products->type }}</td>
+                <td>{{ $products->price }}</td>
+                </tr>
+            </tbody>
+            @endforeach
+        </table>
     </body>
 </html>
