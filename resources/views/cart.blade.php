@@ -19,28 +19,35 @@
                 height: 100vh;
                 margin: 0;
             }
+
             .full-height {
                 height: 100vh;
             }
+
             .flex-center {
                 align-items: center;
                 display: flex;
                 justify-content: center;
             }
+
             .position-ref {
                 position: relative;
             }
+
             .top-right {
                 position: absolute;
                 right: 10px;
                 top: 18px;
             }
+
             .content {
                 text-align: center;
             }
+
             .title {
                 font-size: 84px;
             }
+
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -50,6 +57,7 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
+
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -62,31 +70,31 @@
                 <form action="/cart" id="product_form" method="POST">
                 @csrf
                     <thead>
-                        <tr>
+                    <tr><th><h1>Välkommen till kassan!</h1></th></tr>
+                      <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Flavors</th>
                         <th scope="col">Type</th>
                         <th scope="col">Price</th>
-                        </tr>
+                      </tr>
                     </thead>
 
-                    @foreach ($product as $products) 
                     <tbody>
+
+                    @foreach ($product as $products)
+                      <tr>
+                        <th scope="row"><input name="product[{{ $products->id }}][id]" value="{{ $products->id }}" /></th>
+                        <td><input name="product[{{ $products->id }}][{{ $products->name }}]" value="{{ $products->name }}" /></td>
+                        <td><input name="product[{{ $products->id }}][{{ $products->flavor }}]" value="{{ $products->flavor }}" /></td>
+                        <td><input name="product[{{ $products->id }}][{{ $products->type }}]" value="{{ $products->type }}" /></td>
+                        <td><input name="product[{{ $products->id }}][{{ $products->price }}]" value="{{ $products->price }}" /></td>
+                      </tr>
+                    @endforeach
                         <tr>
-                        <th scope="row">{{ $products->id }}</th>
-                        <td>{{ $products->name }}</td>
-                        <td>{{ $products->flavor }}</td>
-                        <td>{{ $products->type }}</td>
-                        <td>{{ $products->price }}</td>
-                        <td>{{ $products->price }}</td>
-                        <td><input name="product[{{ $products->id }}]" type="checkbox" value="true" /></td>
+                            <td><input type="submit" value="Submit"></td>
                         </tr>
                     </tbody>
-                    @endforeach
-                    <tr>
-                        <td><input type="submit" value="Submit"></td>
-                    </tr>
                 </form>
             </table>
         </div>

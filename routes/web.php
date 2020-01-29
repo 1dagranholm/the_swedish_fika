@@ -20,3 +20,8 @@ Route::get('/', function () {
 // });
 
 Route::get('/products', 'ProductController@show');
+//Route::post('/cart', 'OrderController@show');
+
+// Route::resource('/cart', 'AddToCartController');
+
+Route::post('/cart', 'ProductController@cart');
