@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
       
@@ -33,10 +34,10 @@
                   <a class="nav-link" href="/products">Produkter</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/orders">Min order</a>
+                <a class="nav-link" href="/cart">Kundkorg</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/cart">Kundkorg</a>
+                  <a class="nav-link" href="/orders">Min order</a>
               </li>
           </ul>
           <form class="form-inline my-2 my-lg-0" action="{{url('/search')}}" method="post">

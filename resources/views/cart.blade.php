@@ -21,8 +21,10 @@
             <td>- SEK</td>
             </tr>
         </tbody>
-
 </table>
+
+<a href="#" class="btn btn-primary">Köp</a>
+
 @endsection
         
         

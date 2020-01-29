@@ -9,6 +9,7 @@
             <th scope="col">Smaker</th>
             <th scope="col">Produkttyp</th>
             <th scope="col">Pris</th>
+            <th scope="col"></th>
             </tr>
         </thead>
         @foreach ($product as $products) 
@@ -19,6 +20,7 @@
             <td>{{ $products->flavor }}</td>
             <td>{{ $products->type }}</td>
             <td>{{ $products->price }} SEK</td>
+            <td><a href="#" class="btn btn-primary">Köp</a></td>
             </tr>
         </tbody>
         @endforeach

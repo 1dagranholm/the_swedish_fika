@@ -5,19 +5,13 @@
         <thead class="thead-dark">
             <tr>
             <th scope="col">ID</th>
-            <th scope="col">Namn</th>
-            <th scope="col">Smaker</th>
-            <th scope="col">Produkttyp</th>
-            <th scope="col">Pris</th>
+            <th scope="col">Totalt pris</th>
             </tr>
         </thead>
 
         <tbody>
             <tr>
             <th scope="row">-</th>
-            <td>-</td>
-            <td>-</td>
-            <td>-</td>
             <td>- SEK</td>
             </tr>
         </tbody>
