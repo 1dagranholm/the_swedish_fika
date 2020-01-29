@@ -20,3 +20,5 @@ Route::get('/', function () {
 // });
 
 Route::get('/products', 'ProductController@show');
+Route::get('/orders', 'OrderController@show');
+Route::get('/cart', 'CartController@show');
