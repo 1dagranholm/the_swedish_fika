@@ -1,7 +1,3 @@
-
-@extends ('layout')
-
-@section ('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -68,28 +64,29 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        <form action="{{url('/search')}}" method="post">
-            {{ csrf_field() }}
-            <input type="text" name="searchInput">
-            <input type="submit">
-        </form>
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Välkommen
-                </div>
-@endsection
+        <h1>SO FAR SO GOOD</h1>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Flavors</th>
+                <th scope="col">Type</th>
+                <th scope="col">Price</th>
+                </tr>
+            </thead>
+            @foreach ($product as $products) 
+            <tbody>
+                <tr>
+                <th scope="row">{{ $products->id }}</th>
+                <td>{{ $products->name }}</td>
+                <td>{{ $products->flavor }}</td>
+                <td>{{ $products->type }}</td>
+                <td>{{ $products->price }}</td>
+                </tr>
+            </tbody>
+            @endforeach
+        </table>
+    </body>
+</html>
