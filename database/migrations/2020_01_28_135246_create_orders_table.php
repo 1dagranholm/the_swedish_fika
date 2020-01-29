@@ -14,8 +14,11 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->bigIncrements('id'); //skapar kolumnen id
+            $table->foreign('id')->references('id')->on('products'); 
+            //sätter den till foreign key och refererar till primary key id i products tabellen
+            $table->integer('amount');
+            
         });
     }
 
