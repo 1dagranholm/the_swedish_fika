@@ -26,7 +26,7 @@ class OrderController extends Controller {
                 $total = ($total + ($products['price'] * $products['count']));
             }
         }
-// dd($product['product']);
+
         return view('cart', [
             'product' => $request->all(),
             'total' => $total
@@ -39,9 +39,8 @@ class OrderController extends Controller {
         
         
         foreach($product['product'] as $products) { 
-            // dd($product["'id'"]);    
-                $id = $products["'id'"];
-            $count = $products["'count'"];
+            $id = $products['id'];
+            $count = $products['count'];
 
             $order = [
                 'product_id' => $id,
@@ -49,9 +48,8 @@ class OrderController extends Controller {
             ];
             
         }
-        $product = $request->all();
+        
         Order::confirm($order);
-
         return view('confirm');
     }
 }
