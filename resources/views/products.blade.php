@@ -1,8 +1,10 @@
 @extends ('layout')
 
 @section ('content')
-<table class="table table-striped table-hover table-responsive-sm">
-        <thead class="thead-dark">
+
+<h1 class="page-header">Alla produkter</h1>
+<table class="table table-striped table-hover table-responsive-sm ">
+        <thead>
             <tr>
             <th scope="col">ID</th>
             <th scope="col">Namn</th>
@@ -20,13 +22,10 @@
             <td>{{ $products->flavor }}</td>
             <td>{{ $products->type }}</td>
             <td>{{ $products->price }} SEK</td>
-            <td><a href="#" class="btn btn-primary">Köp</a></td>
+            <td><a href="#" class="btn darker-pink-bgr">Köp</a></td>
             </tr>
         </tbody>
         @endforeach
 </table>
-@endsection
-        
-        
-   
 
+@endsection

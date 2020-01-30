@@ -1,22 +1,18 @@
 @extends ('layout')
 
 @section ('content')
-<table class="table table-striped table-hover table-responsive-sm">
-        <thead class="thead-dark">
-            <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Totalt pris</th>
-            </tr>
-        </thead>
 
-        <tbody>
-            <tr>
-            <th scope="row">-</th>
-            <td>- SEK</td>
-            </tr>
-        </tbody>
+<div class="jumbotron jumbotron-fluid text-dark pt-0 donuts-img" id="header-image">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center bg-dark">
+                    <h1 class="page-header text-white mt-3">Tack för din order!</h1>
+                    <p class="text-center text-white">Din order kommer att färdigställas och skickas till dig inom kort. Hoppas att det smakar!</p>
+            </div>  
+        </div>
+    </div>
+</div>
 
-</table>
 @endsection
         
         

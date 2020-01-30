@@ -1,8 +1,10 @@
 @extends ('layout')
 
 @section ('content')
+
+<h1 class="page-header">Kundkorg</h1>
 <table class="table table-striped table-hover table-responsive-sm">
-        <thead class="thead-dark">
+        <thead>
             <tr>
             <th scope="col">ID</th>
             <th scope="col">Namn</th>
@@ -23,7 +25,7 @@
         </tbody>
 </table>
 
-<a href="#" class="btn btn-primary">Köp</a>
+<a href="#" class="btn darker-pink-bgr">Köp</a>
 
 @endsection
         
