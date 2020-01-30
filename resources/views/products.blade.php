@@ -1,31 +1,37 @@
 @extends ('layout')
 
 @section ('content')
+<table class="table table-striped table-hover table-responsive-sm">
+    <form action="/cart" id="product_form" method="POST">
+        @csrf
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Namn</th>
+                <th scope="col">Smak</th>
+                <th scope="col">Produkttyp</th>
+                <th scope="col">Pris</th>
+                <th scope="col">Antal</th>
+                </tr>
+            </thead>
 
-<h1 class="page-header">Alla produkter</h1>
-<table class="table table-striped table-hover table-responsive-sm ">
-        <thead>
-            <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Namn</th>
-            <th scope="col">Smaker</th>
-            <th scope="col">Produkttyp</th>
-            <th scope="col">Pris</th>
-            <th scope="col"></th>
-            </tr>
-        </thead>
-        @foreach ($product as $products) 
-        <tbody>
-            <tr>
-            <th scope="row">{{ $products->id }}</th>
-            <td>{{ $products->name }}</td>
-            <td>{{ $products->flavor }}</td>
-            <td>{{ $products->type }}</td>
-            <td>{{ $products->price }} SEK</td>
-            <td><a href="#" class="btn darker-pink-bgr">Köp</a></td>
-            </tr>
-        </tbody>
-        @endforeach
+            <tbody>
+
+            @foreach ($product as $products)
+                <tr>
+                <th scope="row"><input name="product[{{ $products->id }}][id]" value="{{ $products->id }}" /></th>
+                <td><input readonly name="product[{{ $products->id }}][name]" value="{{ $products->name }}" /></td>
+                <td><input readonly name="product[{{ $products->id }}][flavor]" value="{{ $products->flavor }}" /></td>
+                <td><input readonly name="product[{{ $products->id }}][type]" value="{{ $products->type }}" /></td>
+                <td><input readonly name="product[{{ $products->id }}][price]" value="{{ $products->price }}" /></td>
+                <td><input name="product[{{ $products->id }}][count]" max="10" min="0" type="number" value="0"></td>
+                </tr>
+            @endforeach
+                <tr>
+                    <td><input type="submit" value="Lätt till i kundkorgen"></td>
+                </tr>
+            </tbody>
+    </form>
 </table>
 
 @endsection
