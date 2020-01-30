@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Produkter</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -89,7 +89,7 @@
                         <td><input name="product[{{ $products->id }}][flavor]" value="{{ $products->flavor }}" /></td>
                         <td><input name="product[{{ $products->id }}][type]" value="{{ $products->type }}" /></td>
                         <td><input name="product[{{ $products->id }}][price]" value="{{ $products->price }}" /></td>
-                        <td><input name="product[{{ $products->id }}][amount]" max="10" type="number" value="0"></td>
+                        <td><input name="product[{{ $products->id }}][amount]" max="10" min="0" type="number" value="0"></td>
                       </tr>
                     @endforeach
                         <tr>
