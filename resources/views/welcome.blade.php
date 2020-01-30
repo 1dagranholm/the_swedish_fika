@@ -15,8 +15,10 @@
                     aria-label="The Swedish Fika"
                     class="img-fluid width: 100% \9;"
                     />
+                </div>
+                <div class="col-12 text-center">
                     <a href="/products" class="btn darker-pink-bgr mt-3">Köp ditt fika här</a>
-                </div>  
+                </div> 
             </div>
         </div>
     </div>

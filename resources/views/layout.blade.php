@@ -9,6 +9,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/app.css">
+
+    <!-- Fontawesome 4 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
   </head>
   <body>
       
@@ -31,13 +35,13 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                  <a class="nav-link" href="/products">Produkter</a>
+                  <a class="nav-link text-dark" href="/products"><i class="fa fa-heart" aria-hidden="true"></i> Produkter</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/cart">Kundkorg</a>
+                <a class="nav-link text-dark" href="/cart"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Kundkorg</a>
               </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0" action="{{url('/search')}}" method="post">
+            </ul>
+          <form class="form-inline my-2 my-lg-0 ml-4" action="{{url('/search')}}" method="post">
           {{ csrf_field() }}
               <input class="form-control mr-sm-2" type="search" placeholder="Sök" name="searchInput">
               <button class="btn darker-pink-bgr my-2 my-sm-0" type="submit">Sök</button>
