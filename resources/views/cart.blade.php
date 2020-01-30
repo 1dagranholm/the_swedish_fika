@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Kassa</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -76,8 +76,9 @@
                         <th scope="col">Namn</th>
                         <th scope="col">Smak</th>
                         <th scope="col">Produkttyp</th>
-                        <th scope="col">Pris</th>
                         <th scope="col">Antal</th>
+                        <th scope="col">Á Pris</th>
+                        <th scope="col">Total</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -89,11 +90,19 @@
                             <td> {{ $products['name'] }} </td>
                             <td> {{ $products['flavor'] }} </td>
                             <td><{{ $products['type'] }} </td>
-                            <td>{{ $products['price'] }}</td>
                             <td>{{ $products['amount'] }}</td>
+                            <td>{{ $products['price'] }}</td>
+                            <td>{{ $products['price'] * $products['amount'] }}</td>
                         </tr>
                         @endif
                         @endforeach
+
+                        <tr>
+                            <td>Totalt för order: </td>
+                            <td>
+
+                            </td>
+                        </tr>
 
                         <tr>
                             <td><input type="submit" value="Bekräfta beställningen"></td>

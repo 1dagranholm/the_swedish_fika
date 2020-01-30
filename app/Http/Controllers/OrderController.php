@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
 
 
 class OrderController extends Controller {
@@ -15,6 +16,10 @@ class OrderController extends Controller {
     }
 
     public function confirm(Request $request) {
+
+        $products = $request->all();
+        Order::confirm($products);
+
         return view('confirm');
     }
     
