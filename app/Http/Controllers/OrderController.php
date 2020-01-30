@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Order;
+use Illuminate\Http\Request;
 use DB;
 
 class OrderController extends Controller {
@@ -26,7 +26,7 @@ class OrderController extends Controller {
                 $total = ($total + ($products['price'] * $products['count']));
             }
         }
-
+// dd($product['product']);
         return view('cart', [
             'product' => $request->all(),
             'total' => $total
@@ -34,10 +34,23 @@ class OrderController extends Controller {
     }
 
     public function confirm(Request $request) {
+        $product = $request;
 
-        $products = $request->all();
-        //dd($products);
-        Order::confirm($products);
+        
+        
+        foreach($product['product'] as $products) { 
+            // dd($product["'id'"]);    
+                $id = $products["'id'"];
+            $count = $products["'count'"];
+
+            $order = [
+                'product_id' => $id,
+                'amount' => $count
+            ];
+            
+        }
+        $product = $request->all();
+        Order::confirm($order);
 
         return view('confirm');
     }
