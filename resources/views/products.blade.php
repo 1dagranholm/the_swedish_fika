@@ -23,7 +23,7 @@
                 <td>{{ $products->name }}<input hidden readonly name="product[{{ $products->id }}][name]" value="{{ $products->name }}" /></td>
                 <td>{{ $products->flavor }}<input hidden readonly name="product[{{ $products->id }}][flavor]" value="{{ $products->flavor }}" /></td>
                 <td>{{ $products->type }}<input hidden readonly name="product[{{ $products->id }}][type]" value="{{ $products->type }}" /></td>
-                <td>{{ $products->price }}<input hidden readonly name="product[{{ $products->id }}][price]" value="{{ $products->price }}" /></td>
+                <td>{{ $products->price }} SEK<input hidden readonly name="product[{{ $products->id }}][price]" value="{{ $products->price }}" /></td>
                 <td><input name="product[{{ $products->id }}][count]" max="10" min="0" type="number" value="0"></td>
                 </tr>
             @endforeach
