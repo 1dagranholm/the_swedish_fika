@@ -20,11 +20,11 @@
             @foreach ($product as $products)
                 <tr>
                 <th scope="row"><input name="product[{{ $products->id }}][id]" value="{{ $products->id }}" /></th>
-                <td><input name="product[{{ $products->id }}][name]" value="{{ $products->name }}" /></td>
-                <td><input name="product[{{ $products->id }}][flavor]" value="{{ $products->flavor }}" /></td>
-                <td><input name="product[{{ $products->id }}][type]" value="{{ $products->type }}" /></td>
-                <td><input name="product[{{ $products->id }}][price]" value="{{ $products->price }}" /></td>
-                <td><input name="product[{{ $products->id }}][amount]" max="10" min="0" type="number" value="0"></td>
+                <td><input readonly name="product[{{ $products->id }}][name]" value="{{ $products->name }}" /></td>
+                <td><input readonly name="product[{{ $products->id }}][flavor]" value="{{ $products->flavor }}" /></td>
+                <td><input readonly name="product[{{ $products->id }}][type]" value="{{ $products->type }}" /></td>
+                <td><input readonly name="product[{{ $products->id }}][price]" value="{{ $products->price }}" /></td>
+                <td><input readonly name="product[{{ $products->id }}][count]" max="10" min="0" type="number" value="0"></td>
                 </tr>
             @endforeach
                 <tr>
