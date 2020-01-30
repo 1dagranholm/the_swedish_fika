@@ -15,7 +15,8 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id'); //skapar kolumnen id
-            $table->foreign('id')->references('id')->on('products'); 
+            $table->unsignedBigInteger('product_id'); //skapar kolumnen product_id
+            $table->foreign('product_id')->references('id')->on('products'); 
             //sätter den till foreign key och refererar till primary key id i products tabellen
             $table->integer('amount');
             

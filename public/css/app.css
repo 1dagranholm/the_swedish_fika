@@ -1,0 +1,77 @@
+h1 {
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+h4 {
+  font-size: 0.8rem;
+}
+
+#welcome-logo {
+  width: 80%;
+  margin: 200px 50px 0px 50px;
+}
+
+.page-header {
+text-align: center;
+}
+
+table {
+  margin-top: 20px;
+}
+
+.light-pink-bgr {
+  background-color: rgb(245, 235, 239);
+}
+
+.darker-pink-bgr {
+  background-color: #FF8080;
+  color: white;
+}
+
+.dark-bkr {
+  background-color: rgb(12, 12, 12);
+}
+
+.translucent-bgr {
+  background-color: white;
+}
+
+body {
+  padding-bottom: 200px;
+  font-size: 0.8rem;
+}
+
+.welcome-img {
+  background-image: url("/img/close-up-photo-of-pink-donuts-1982485.jpg");
+  background-color: rgb(255, 230, 193);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
+}
+
+.buns-img {
+  background-image: url("/img/otto-norin-uG3Vu5TXKxE-unsplash.jpg");
+  background-color: #FF8080;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
+}
+
+.donuts-img {
+  background-image: url("/img/anna-sullivan--tR4fnNJW2A-unsplash.jpg");
+  background-color: #FFC1D6;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 600px;
+}
