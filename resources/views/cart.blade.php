@@ -28,15 +28,15 @@
                 <td>{{ $products['flavor'] }}<input hidden disabled name="product[{{ $products['id'] }}]['flavor']" value="{{ $products['flavor'] }}" /></td>
                 <td>{{ $products['type'] }}<input hidden disabled name="product[{{ $products['id'] }}]['type']" value="{{ $products['type'] }}" /></td>
                 <td><input name="product[{{ $products['id'] }}]['count']" max="10" min="0" type="number" value="{{ $products['count'] }}"></td>
-                <td><input disabled name="product[{{ $products['id'] }}]['price']" value="{{ $products['price'] }}" /></td>
-                <td>{{ $products['price'] * $products['count'] }}</td>
+                <td>{{ $products['price'] }}<input hidden disabled name="product[{{ $products['id'] }}]['price']" value="{{ $products['price'] }} SEK" /></td>
+                <td>{{ $products['price'] * $products['count'] }} SEK</td>
             </tr>
             @endif
             @endforeach
             
             <tr>
-                    <td colspan="5">Totalt för order: </td>
-                    <td colspan="2"> {{ $total }} </td>
+                    <td class="bg-dark text-white font-weight-bold" colspan="6">Totalt för order: </td>
+                    <td class="bg-dark text-white font-weight-bold" colspan="1"> {{ $total }} SEK </td>
             </tr>
 
             <tr>
