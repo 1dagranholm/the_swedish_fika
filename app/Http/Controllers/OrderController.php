@@ -18,8 +18,18 @@ class OrderController extends Controller {
 
     public function cart(Request $request) {
 
+        $product = $request;
+        $total = 0;
+        foreach ($product['product'] as $products) {
+
+            if($products['count'] > 0) {
+                $total = ($total + ($products['price'] * $products['count']));
+            }
+        }
+
         return view('cart', [
-            'product' => $request->all()
+            'product' => $request->all(),
+            'total' => $total
         ]);
     }
 
