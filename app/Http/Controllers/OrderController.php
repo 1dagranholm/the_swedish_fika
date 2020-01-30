@@ -36,6 +36,7 @@ class OrderController extends Controller {
     public function confirm(Request $request) {
 
         $products = $request->all();
+        //dd($products);
         Order::confirm($products);
 
         return view('confirm');

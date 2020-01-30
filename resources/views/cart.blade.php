@@ -21,31 +21,30 @@
 
             @foreach ($product['product'] as $products)
             @if($products['count'] > 0)
+
             <tr>
-                <th scope="row"> {{ $products['id'] }} </th>
-                <td> {{ $products['name'] }} </td>
-                <td> {{ $products['flavor'] }} </td>
-                <td><{{ $products['type'] }} </td>
-                <td>{{ $products['count'] }}</td>
-                <td>{{ $products['price'] }}</td>
+                <th readonly scope="row"><input name="product[{{ $products['id'] }}]['id']" value="{{ $products['id'] }}" /></th>
+                <td><input disabled name="product[{{ $products['id'] }}]['name']" value="{{ $products['name'] }}" /></td>
+                <td><input disabled name="product[{{ $products['id'] }}]['flavor']" value="{{ $products['flavor'] }}" /></td>
+                <td><input disabled name="product[{{ $products['id'] }}]['type']" value="{{ $products['type'] }}" /></td>
+                <td><input disabled name="product[{{ $products['id'] }}]['price']" value="{{ $products['price'] }}" /></td>
+                <td><input name="product[{{ $products['id'] }}]['count']" max="10" min="0" type="number" value="0"></td>
                 <td>{{ $products['price'] * $products['count'] }}</td>
             </tr>
             @endif
             @endforeach
-
+            
             <tr>
-                <td>Totalt för order: </td>
-                <td> {{ $total }} </td>
+                    <td colspan="5">Totalt för order: </td>
+                    <td colspan="2"> {{ $total }} </td>
             </tr>
 
             <tr>
-                <td><input type="submit" value="Bekräfta beställningen"></td>
+                <td colspan="7"><input class="btn darker-pink-bgr" type="submit" value="Bekräfta order"></td>
             </tr>
         </tbody>
     </form>
 </table>
-
-<a href="#" class="btn darker-pink-bgr">Köp</a>
 
 @endsection
         
