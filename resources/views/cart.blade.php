@@ -27,8 +27,8 @@
                 <td><input disabled name="product[{{ $products['id'] }}]['name']" value="{{ $products['name'] }}" /></td>
                 <td><input disabled name="product[{{ $products['id'] }}]['flavor']" value="{{ $products['flavor'] }}" /></td>
                 <td><input disabled name="product[{{ $products['id'] }}]['type']" value="{{ $products['type'] }}" /></td>
-                <td><input disabled name="product[{{ $products['id'] }}]['price']" value="{{ $products['price'] }}" /></td>
                 <td><input name="product[{{ $products['id'] }}]['count']" max="10" min="0" type="number" value="{{ $products['count'] }}"></td>
+                <td><input disabled name="product[{{ $products['id'] }}]['price']" value="{{ $products['price'] }}" /></td>
                 <td>{{ $products['price'] * $products['count'] }}</td>
             </tr>
             @endif
