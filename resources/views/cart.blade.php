@@ -23,10 +23,10 @@
             @if($products['count'] > 0)
 
             <tr>
-                <th readonly scope="row"><input name="product[{{ $products['id'] }}]['id']" value="{{ $products['id'] }}" /></th>
-                <td><input disabled name="product[{{ $products['id'] }}]['name']" value="{{ $products['name'] }}" /></td>
-                <td><input disabled name="product[{{ $products['id'] }}]['flavor']" value="{{ $products['flavor'] }}" /></td>
-                <td><input disabled name="product[{{ $products['id'] }}]['type']" value="{{ $products['type'] }}" /></td>
+                <th readonly scope="row">{{ $products['id'] }}<input hidden name="product[{{ $products['id'] }}]['id']" value="{{ $products['id'] }}" /></th>
+                <td>{{ $products['name'] }}<input hidden disabled name="product[{{ $products['id'] }}]['name']" value="{{ $products['name'] }}" /></td>
+                <td>{{ $products['flavor'] }}<input hidden disabled name="product[{{ $products['id'] }}]['flavor']" value="{{ $products['flavor'] }}" /></td>
+                <td>{{ $products['type'] }}<input hidden disabled name="product[{{ $products['id'] }}]['type']" value="{{ $products['type'] }}" /></td>
                 <td><input name="product[{{ $products['id'] }}]['count']" max="10" min="0" type="number" value="{{ $products['count'] }}"></td>
                 <td><input disabled name="product[{{ $products['id'] }}]['price']" value="{{ $products['price'] }}" /></td>
                 <td>{{ $products['price'] * $products['count'] }}</td>
@@ -40,7 +40,7 @@
             </tr>
 
             <tr>
-                <td colspan="7"><input class="btn darker-pink-bgr" type="submit" value="Bekräfta order"></td>
+                <td colspan="7" class="text-right bg-white"><input class="btn darker-pink-bgr" type="submit" value="Bekräfta order"></td>
             </tr>
         </tbody>
     </form>
