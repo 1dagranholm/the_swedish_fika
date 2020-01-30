@@ -72,10 +72,11 @@
                     <thead>
                       <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Flavors</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Price</th>
+                        <th scope="col">Namn</th>
+                        <th scope="col">Smak</th>
+                        <th scope="col">Produkttyp</th>
+                        <th scope="col">Pris</th>
+                        <th scope="col">Antal</th>
                       </tr>
                     </thead>
 
@@ -88,7 +89,7 @@
                         <td><input name="product[{{ $products->id }}][flavor]" value="{{ $products->flavor }}" /></td>
                         <td><input name="product[{{ $products->id }}][type]" value="{{ $products->type }}" /></td>
                         <td><input name="product[{{ $products->id }}][price]" value="{{ $products->price }}" /></td>
-                        <td><input name="product[{{ $products->id }}][checked]" type="checkbox" value="True"></td>
+                        <td><input name="product[{{ $products->id }}][amount]" max="10" type="number" value="0"></td>
                       </tr>
                     @endforeach
                         <tr>

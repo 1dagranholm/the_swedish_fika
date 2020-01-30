@@ -73,22 +73,24 @@
                     <thead>
                       <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Flavors</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Price</th>
+                        <th scope="col">Namn</th>
+                        <th scope="col">Smak</th>
+                        <th scope="col">Produkttyp</th>
+                        <th scope="col">Pris</th>
+                        <th scope="col">Antal</th>
                       </tr>
                     </thead>
                     <tbody>
 
                         @foreach ($product['product'] as $products)
-                        @if(array_key_exists('checked', $products))
+                        @if($products['amount'] > 0)
                         <tr>
                             <th scope="row"> {{ $products['id'] }} </th>
                             <td> {{ $products['name'] }} </td>
                             <td> {{ $products['flavor'] }} </td>
                             <td><{{ $products['type'] }} </td>
                             <td>{{ $products['price'] }}</td>
+                            <td>{{ $products['amount'] }}</td>
                         </tr>
                         @endif
                         @endforeach
