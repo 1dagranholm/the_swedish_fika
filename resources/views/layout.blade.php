@@ -62,7 +62,10 @@
  <footer class="container-fluid text-white-50 bg-dark mt-5 py-5 fixed-bottom">
     <div class="row">
       <div class="col-12 text-center">
-        <p>Copyright: <a href="mailto:granholm.ida@gmail.com" class="text-white">Ida Granholm</a>, Johan Abde, Jonna Fleischanderl & Per Egertun, 2020.</p>
+        <p>Copyright: <a href="mailto:granholm.ida@gmail.com" class="text-white">Ida Granholm</a>, 
+          <a href="mailto:abdejohan@gmail.com" class="text-white">Johan Abde</a>, 
+          <a href="mailto:jonnaliesel@gmail.com" class="text-white">Jonna Fleischanderl</a> & 
+          <a href="mailto:per_egertun@hotmail.com" class="text-white">Per Egertun</a>, Chas Academy 2020.</p>
       </div>
     </div>
   </footer>
