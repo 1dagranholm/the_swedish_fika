@@ -1,92 +1,31 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends ('layout')
 
-        <title>Laravel</title>
+@section ('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+<h1 class="page-header">Sökresultat</h1>   
+<table class="table table-striped table-hover table-responsive-sm">
+    <thead>
+        <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Namn</th>
+        <th scope="col">Smaker</th>
+        <th scope="col">Produkttyp</th>
+        <th scope="col">Pris</th>
+        <th scope="col"></th>
+        </tr>
+    </thead>
+    @foreach ($product as $products) 
+    <tbody>
+        <tr>
+        <th scope="row">{{ $products->id }}</th>
+        <td>{{ $products->name }}</td>
+        <td>{{ $products->flavor }}</td>
+        <td>{{ $products->type }}</td>
+        <td>{{ $products->price }} SEK</td>
+        <td><a href="#" class="btn darker-pink-bgr">Köp</a></td>
+        </tr>
+    </tbody>
+    @endforeach
+</table>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>SO FAR SO GOOD</h1>
-        
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Flavors</th>
-                <th scope="col">Type</th>
-                <th scope="col">Price</th>
-                </tr>
-            </thead>
-            @foreach ($product as $products) 
-            <tbody>
-                <tr>
-                <th scope="row">{{ $products->id }}</th>
-                <td>{{ $products->name }}</td>
-                <td>{{ $products->flavor }}</td>
-                <td>{{ $products->type }}</td>
-                <td>{{ $products->price }}</td>
-                </tr>
-            </tbody>
-            @endforeach
-        </table>
-    </body>
-</html>
+@endsection
