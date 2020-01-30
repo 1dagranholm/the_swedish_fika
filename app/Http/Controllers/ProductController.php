@@ -6,10 +6,10 @@ use App\Product;
 
 class ProductController extends Controller {
 
-        public function show() {
+    public function show() {
         $products = Product::show();
         return view('products', [
             'product' => $products
         ]);
-    }
+        }
 }
