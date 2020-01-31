@@ -8,7 +8,7 @@ use DB;
 
 class OrderController extends Controller {
 
-        public function show() {
+    public function show() {
         $order = DB::table('orders')->get();
 
         return view('orders', [
@@ -17,11 +17,10 @@ class OrderController extends Controller {
     }
 
     public function cart(Request $request) {
-
         $product = $request;
         $total = 0;
+        
         foreach ($product['product'] as $products) {
-
             if($products['count'] > 0) {
                 $total = ($total + ($products['price'] * $products['count']));
             }
@@ -36,8 +35,6 @@ class OrderController extends Controller {
     public function confirm(Request $request) {
         $product = $request;
 
-        
-        
         foreach($product['product'] as $products) { 
             $id = $products['id'];
             $count = $products['count'];
@@ -46,10 +43,9 @@ class OrderController extends Controller {
                 'product_id' => $id,
                 'amount' => $count
             ];
-            
+            Order::confirm($order);    
         }
         
-        Order::confirm($order);
         return view('confirm');
     }
 }

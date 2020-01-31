@@ -7,8 +7,7 @@ use DB;
 
 class CartController extends Controller {
 
-        public function show() {
-
+    public function show() {
         return view('cart');
     }
 }
