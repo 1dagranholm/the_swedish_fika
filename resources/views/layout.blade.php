@@ -37,9 +37,6 @@
               <li class="nav-item">
                   <a class="nav-link text-dark" href="/products"><i class="fa fa-heart" aria-hidden="true"></i> Produkter</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-dark" href="/cart"><i class="fa fa-shopping-basket" aria-hidden="true"></i> Kundkorg</a>
-              </li>
             </ul>
           <form class="form-inline my-2 my-lg-0 ml-4" action="{{url('/search')}}" method="post">
           {{ csrf_field() }}
