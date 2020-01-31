@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Order;
+use Illuminate\Http\Request;
 use DB;
 
 class OrderController extends Controller {
 
-        public function show() {
+    public function show() {
         $order = DB::table('orders')->get();
 
         return view('orders', [
@@ -17,11 +17,10 @@ class OrderController extends Controller {
     }
 
     public function cart(Request $request) {
-
         $product = $request;
         $total = 0;
+        
         foreach ($product['product'] as $products) {
-
             if($products['count'] > 0) {
                 $total = ($total + ($products['price'] * $products['count']));
             }
@@ -34,11 +33,19 @@ class OrderController extends Controller {
     }
 
     public function confirm(Request $request) {
+        $product = $request;
 
-        $products = $request->all();
-        //dd($products);
-        Order::confirm($products);
+        foreach($product['product'] as $products) { 
+            $id = $products['id'];
+            $count = $products['count'];
 
+            $order = [
+                'product_id' => $id,
+                'amount' => $count
+            ];
+            Order::confirm($order);    
+        }
+        
         return view('confirm');
     }
 }
