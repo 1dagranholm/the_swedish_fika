@@ -28,7 +28,7 @@
                 </tr>
             @endforeach
                 <tr>
-                    <td colspan="6" class="text-right bg-white"><input class="btn darker-pink-bgr" type="submit" value="Lätt till i kundkorgen"></td>
+                    <td colspan="6" class="text-right bg-white"><input class="btn darker-pink-bgr" type="submit" value="Lägg till i kundkorgen"></td>
                 </tr>
             </tbody>
     </form>
