@@ -2,8 +2,13 @@
 
 @section ('content')
 
-
 <div class="jumbotron jumbotron-fluid text-dark pt-0 welcome-img" id="header-image">
+    <div class="weather-wrapper">
+        <img src="https://openweathermap.org/img/wn/{{$weather['weather'][0]['icon']}}@2x.png">
+        <p class="lead"> Det är just nu <strong>{{$weather['weather'][0]['description']}}</strong> och <strong>{{floor($weather['main']['temp'])}}</strong> grader ute i <strong>Stockholm.</strong><br>
+            Perfekt väder för fika med andra ord!
+        </p> 
+    </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-center">

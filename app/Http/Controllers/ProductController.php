@@ -14,4 +14,9 @@ class ProductController extends Controller {
             'product' => $products
         ]);
     }
+
+    public function showAllApi() {
+        $products = Product::show();
+        return response()->json($products, 200);
+    }
 }
