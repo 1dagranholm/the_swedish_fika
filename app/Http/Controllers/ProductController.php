@@ -16,7 +16,10 @@ class ProductController extends Controller {
     }
 
     public function showAllApi() {
-        $products = Product::show();
-        return response()->json($products, 200);
+        $data = Product::show();
+        return response()->json($data, 200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
+        JSON_UNESCAPED_UNICODE);
     }
 }
+
+
