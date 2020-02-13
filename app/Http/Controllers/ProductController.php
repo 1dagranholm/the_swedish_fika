@@ -8,11 +8,18 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller {
 
-    public function show(Product $products) {
+    public function show() {
         $products = Product::show();
-        // return view('products', [
-        //     'product' => $products]);
+        return view('products', [
+            'product' => $products]);
+    }
+
+    public function showAllProductsApi(Product $products) {
+        $products = Product::show();
         return $products;
-        
+    }
+    
+    public function showProductApi(Product $products) {
+        return $products;
     }
 }

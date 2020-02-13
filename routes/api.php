@@ -18,4 +18,6 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::get('/products/{products}', 'ProductController@show');
+Route::get('/products', 'ProductController@show');
+Route::get('/productsapi', 'ProductController@showAllProductsApi');
+Route::get('/products/{products}', 'ProductController@showProductApi');
