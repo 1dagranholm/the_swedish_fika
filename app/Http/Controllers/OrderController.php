@@ -34,7 +34,6 @@ class OrderController extends Controller {
 
     public function confirm(Request $request) {
 
-
         $data = $request['data'];
 
         Order::confirm($data);    

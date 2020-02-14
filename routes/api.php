@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 
 /*
@@ -13,4 +14,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/v1/products', 'ProductController@showAllApi');
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::get('/products', 'ProductController@show');
+Route::get('/productsapi', 'ProductController@showAllProductsApi');
+Route::get('/products/{products}', 'ProductController@showProductApi');
