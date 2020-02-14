@@ -35,10 +35,6 @@ class OrderController extends Controller {
     public function confirm(Request $request) {
         $data = $request;
 
-        // dd($data['product']);
-        $order = $data['product'];
-        Order::confirm($order);   
-
         foreach($data['product'] as $products) { 
             $id = $products['id'];
             $count = $products['count'];
