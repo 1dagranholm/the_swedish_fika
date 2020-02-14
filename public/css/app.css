@@ -16,7 +16,7 @@ h4 {
 
 #welcome-logo {
   width: 80%;
-  margin: 200px 50px 0px 50px;
+  margin: 80px 50px 0px 50px;
 }
 
 .page-header {
@@ -74,4 +74,27 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 600px;
+}
+
+.weather-wrapper {
+  transition: opacity 2s;
+  background-color: rgba(255, 128, 128, 0.4);
+  border-radius: 10px;
+  padding: 20px 20px 20px 100px;
+  margin: 0 auto;
+  position: relative;
+  top: 30px;
+  width: 60%;
+  opacity: 0;
+}
+.weather-wrapper img {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.weather-wrapper p {
+  margin: 0;
+}
+.weather-wrapper strong {
+  font-weight: 600;
 }

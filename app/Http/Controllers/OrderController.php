@@ -33,9 +33,9 @@ class OrderController extends Controller {
     }
 
     public function confirm(Request $request) {
-        $product = $request;
+        $data = $request;
 
-        foreach($product['product'] as $products) { 
+        foreach($data['product'] as $products) { 
             $id = $products['id'];
             $count = $products['count'];
 
