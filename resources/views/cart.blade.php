@@ -28,7 +28,7 @@
             <td>{{ $products['name'] }}</td>
             <td>{{ $products['flavor'] }}</td>
             <td>{{ $products['type'] }}</td>
-            <td></td>
+            <td>{{ $products['count'] }}</td>
             <td>{{ $products['price'] }}</td>
             <td>{{ $products['price'] * $products['count'] }} SEK</td>
         </tr>
