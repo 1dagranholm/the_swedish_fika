@@ -6,7 +6,13 @@
     <div class="weather-wrapper">
         <img src="https://openweathermap.org/img/wn/{{$weather['weather'][0]['icon']}}@2x.png">
         <p class="lead"> Det är just nu <strong>{{$weather['weather'][0]['description']}}</strong> och <strong>{{floor($weather['main']['temp'])}}</strong> grader ute i <strong>Stockholm.</strong><br>
-            Perfekt väder för fika med andra ord!
+
+        @if($weather['main']['temp'] < 5)
+            Välkommen in på en värmande kopp kaffe!
+        @elseif($weather['main']['temp'] > 15)
+            Välkommen in på en svalkande dryck!
+        @endif
+        
         </p> 
     </div>
         <div class="container-fluid">

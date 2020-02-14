@@ -23,11 +23,11 @@ class ProductController extends Controller {
         return $products;
     }
 
-    public function showAllApi() {
-        $data = Product::show();
-        return response()->json($data, 200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
-        JSON_UNESCAPED_UNICODE);
-    }
+    // public function showAllApi() {
+    //     $data = Product::show();
+    //     return response()->json($data, 200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
+    //     JSON_UNESCAPED_UNICODE);
+    // }
 }
 
 
