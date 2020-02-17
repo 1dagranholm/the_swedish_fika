@@ -17,7 +17,7 @@
         <th scope="col">Total</th>
         </tr>
     </thead>
-    <tbody>sdasdasd 
+    <tbody>
         @foreach ($product['product'] as $products)
         @if($products['count'] > 0)
         <tr>
