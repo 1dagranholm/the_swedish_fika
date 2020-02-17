@@ -11,6 +11,8 @@
             Välkommen in på en värmande kopp kaffe!
         @elseif($weather['main']['temp'] > 15)
             Välkommen in på en svalkande dryck!
+        @else 
+            Perfekt väder för en fika med andra ord!
         @endif
         
         </p> 
