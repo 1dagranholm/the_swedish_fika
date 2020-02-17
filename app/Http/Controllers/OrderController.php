@@ -33,18 +33,10 @@ class OrderController extends Controller {
     }
 
     public function confirm(Request $request) {
-        $data = $request;
 
-        foreach($data['product'] as $products) { 
-            $id = $products['id'];
-            $count = $products['count'];
+        $data = $request['data'];
 
-            $order = [
-                'product_id' => $id,
-                'amount' => $count
-            ];
-            Order::confirm($order);    
-        }
+        Order::confirm($data);    
         
         return view('confirm');
     }
