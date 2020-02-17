@@ -19,5 +19,5 @@ Route::post('/search', 'SearchController@search');
 
 Route::get('/products', 'ProductController@show');
 Route::post('/cart', 'OrderController@cart');
-
+Route::get('/cart', 'OrderController@failedCart');
 Route::post('/confirm', 'OrderController@confirm');

@@ -8,15 +8,8 @@ use DB;
 
 class OrderController extends Controller {
 
-    public function show() {
-        $order = DB::table('orders')->get();
-
-        return view('orders', [
-            'order' => $order
-        ]);
-    }
-
     public function cart(Request $request) {
+
         $product = $request;
         $total = 0;
         
@@ -35,9 +28,20 @@ class OrderController extends Controller {
     public function confirm(Request $request) {
 
         $data = $request['data'];
+        //dd($data);       
+
+        $this->validate($request, [
+            'data' => 'required',
+
+        ]); 
 
         Order::confirm($data);    
         
         return view('confirm');
+    }
+
+    public function failedCart(Request $request) {
+
+        return view('failedCart');
     }
 }

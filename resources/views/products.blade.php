@@ -4,6 +4,17 @@
 <table class="table table-striped table-hover table-responsive-sm">
     <form action="/cart" id="product_form" method="POST">
         @csrf
+
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
             <thead>
                 <tr>
                 <th scope="col">ID</th>
