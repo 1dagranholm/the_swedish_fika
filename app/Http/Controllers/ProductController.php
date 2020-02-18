@@ -15,6 +15,14 @@ class ProductController extends Controller {
             'product' => $products]);
     }
 
+    public function showAllProductsApi(Product $products) {
+        $products = Product::show();
+        return $products;
+    }
+    
+    public function showProductApi(Product $products) {
+        return $products;
+    }
 
     /**
      * @param Product $product
@@ -27,14 +35,5 @@ class ProductController extends Controller {
 
     public function index() : ProductResourceCollection {
         return new ProductResourceCollection(Product::paginate());
-    }
-}
-    public function showAllProductsApi(Product $products) {
-        $products = Product::show();
-        return $products;
-    }
-    
-    public function showProductApi(Product $products) {
-        return $products;
     }
 }
