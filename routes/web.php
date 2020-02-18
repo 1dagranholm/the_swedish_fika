@@ -17,7 +17,7 @@ Route::get('/orders', 'OrderController@show');
 Route::post('/search', 'SearchController@search');
 
 
-Route::get('/products', 'ProductController@show');
+Route::get('/products', 'ProductController@showAll');
 Route::post('/cart', 'OrderController@cart');
 
 Route::post('/confirm', 'OrderController@confirm');
