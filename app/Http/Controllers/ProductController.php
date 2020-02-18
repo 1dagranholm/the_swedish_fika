@@ -12,9 +12,9 @@ class ProductController extends Controller {
     public function showAll() {
         $products = Product::show();
         return view('products', [
-            'product' => $products
-        ]);
+            'product' => $products]);
     }
+
 
     /**
      * @param Product $product
@@ -27,5 +27,14 @@ class ProductController extends Controller {
 
     public function index() : ProductResourceCollection {
         return new ProductResourceCollection(Product::paginate());
+    }
+}
+    public function showAllProductsApi(Product $products) {
+        $products = Product::show();
+        return $products;
+    }
+    
+    public function showProductApi(Product $products) {
+        return $products;
     }
 }
