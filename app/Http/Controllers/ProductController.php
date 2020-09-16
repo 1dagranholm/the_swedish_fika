@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProductResource;
+use App\Http\Resources\ProductResourceCollection;
 use App\Product;
-use Illuminate\Http\Request;
 
 
 class ProductController extends Controller {
 
-    public function show() {
+    public function showAll() {
         $products = Product::show();
         return view('products', [
             'product' => $products]);
@@ -23,11 +24,16 @@ class ProductController extends Controller {
         return $products;
     }
 
-    // public function showAllApi() {
-    //     $data = Product::show();
-    //     return response()->json($data, 200, ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
-    //     JSON_UNESCAPED_UNICODE);
-    // }
+    /**
+     * @param Product $product
+     * @return ProductResource
+     */
+    
+    public function show(Product $product) : ProductResource {
+        return new ProductResource($product);
+    }
+
+    public function index() : ProductResourceCollection {
+        return new ProductResourceCollection(Product::paginate());
+    }
 }
-
-
